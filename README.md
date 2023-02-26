@@ -44,8 +44,11 @@ pip install -r requirement_gpu.txt
 Please download the four pre-trained models (~1.1GB each) from the Google drive:
 
 The 1-hour model: [model_jit_cpu_1.onnx](https://drive.google.com/file/d/1fg5jkiN_5dHzKb-5H9Aw4MOmfILmeY-S/view?usp=share_link)
+
 The 3-hour model: [model_jit_cpu_3.onnx](https://drive.google.com/file/d/1EdoLlAXqE9iZLt9Ej9i-JW9LTJ9Jtewt/view?usp=share_link)
+
 The 6-hour model: [model_jit_cpu_6.onnx](https://drive.google.com/file/d/1a4XTktkZa5GCtjQxDJb_fNaqTAUiEJu4/view?usp=share_link)
+
 The 24-hour model: [model_jit_cpu_24.onnx](https://drive.google.com/file/d/1lweQlxcn9fG0zKNW8ne1Khr9ehRTI6HP/view?usp=share_link)
 
 These models are stored using the ONNX format, and thus can be used via different languages such as Python, C++, C#, Java, etc.
@@ -69,6 +72,7 @@ We temporarily do not support other kinds of initial fields due to the possibly 
 We provide an example of transferred input files, `input_surface.npy` and `input_upper.npy`, which correspond to the ERA5 initial fields of at 12:00UTC, 2018/09/27. Please download them using Google drive:
 
 [`input_surface.npy`](https://drive.google.com/file/d/1pj8QEVNpC1FyJfUabDpV4oU3NpSe0BkD/view?usp=share_link)
+
 [`input_upper.npy`](https://drive.google.com/file/d/1--7xEBJt79E3oixizr8oFmK_haDE77SS/view?usp=share_link)
 
 #### Inference
