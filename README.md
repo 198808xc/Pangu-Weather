@@ -94,7 +94,11 @@ Note that one needs to download about 60TB of ERA5 data and prepare for computat
 
 ## License
 
-Pangu-Weather is released by Huawei Cloud. **The commercial use of these models is forbidden.**
+Pangu-Weather is released by Huawei Cloud.
+
+The trained parameters of Pangu-Weather are made available under the terms of the BY-NC-SA 4.0 license. You can find details [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+**The commercial use of these models is forbidden.**
 
 Also, please note that all models were trained using the ERA5 dataset provided by ECMWF. Please do follow [their policy](https://apps.ecmwf.int/datasets/licences/copernicus/).
 
