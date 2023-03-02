@@ -21,7 +21,7 @@ options.intra_op_num_threads = 1
 cuda_provider_options = {'arena_extend_strategy':'kSameAsRequested',}
 
 # Initialize onnxruntime session for Pangu-Weather Models
-ort_session_24 = ort.InferenceSession('pangu_weather_24.onnx', sess_options=options, provider=['CPUExecutionProvider'])
+ort_session_24 = ort.InferenceSession('pangu_weather_24.onnx', sess_options=options, providers=['CPUExecutionProvider'])
 
 # Load the upper-air numpy arrays
 input = np.load(os.path.join(input_data_dir, 'input_upper.npy')).astype(np.float32)
