@@ -13,6 +13,7 @@ from Your_AI_Library import Linear, Conv3d, Conv2d, ConvTranspose3d, ConvTranspo
 # GeLU: the GeLU activation function, see Pytorch API or Tensorflow API
 # DropOut: the dropout function, available in all deep learning libraries
 # DropPath: the DropPath function, see the implementation of vision-transformer, see timm pakage of Pytorch
+# A possible implementation of DropPath: from timm.models.layers import DropPath
 # LayerNorm: the layer normalization function, see Pytorch API or Tensorflow API
 # Softmax: softmax function, see Pytorch API or Tensorflow API
 from Your_AI_Library import GeLU, DropOut, DropPath, LayerNorm, SoftMax
