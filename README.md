@@ -8,6 +8,8 @@ by Kaifeng Bi, Lingxi Xie, Hengheng Zhang, Xin Chen, Xiaotao Gu and Qi Tian
 
 Resources including pseudocode, pre-trained models, and inference code are released.
 
+The slides used in a series of recent talks are attached here. [Baidu Netdisk](https://pan.baidu.com/s/14ZGywcr4XAK5dk75-8PUqA?pwd=9sco), extraction code: 9sco
+
 ## Installation
 
 The downloaded files shall be organized as the following hierarchy:
