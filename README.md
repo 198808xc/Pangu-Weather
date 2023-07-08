@@ -31,12 +31,12 @@ The downloaded files shall be organized as the following hierarchy:
 
 If you use a CPU environment, please run:
 ```
-pip install -r requirement_cpu.txt
+pip install -r requirements_cpu.txt
 ```
 
 If you use a GPU environment, please first confirm that the cuda version is 11.6 and the cudnn version is the 8.2.4 for Linux and 8.5.0.96 for Windows (please see [this page](https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html) for details). Then, please run:
 ```
-pip install -r requirement_gpu.txt
+pip install -r requirements_gpu.txt
 ```
 
 ## Global weather forecasting (inference) using the trained models
