@@ -1,14 +1,25 @@
 ## Pangu-Weather
 
-This is the official repository for the Pangu-Weather paper.
+This is the official repository for the Pangu-Weather papers.
+
+[Accurate medium-range global weather forecasting with 3D neural networks](https://www.nature.com/articles/s41586-023-06185-3), Nature, Volume 619, Pages 533–538, 2023.
 
 [Pangu-Weather: A 3D High-Resolution Model for Fast and Accurate Global Weather Forecast](https://arxiv.org/abs/2211.02556), arXiv preprint: 2211.02556, 2022.
 
-by Kaifeng Bi, Lingxi Xie, Hengheng Zhang, Xin Chen, Xiaotao Gu and Qi Tian
+*by Kaifeng Bi, Lingxi Xie, Hengheng Zhang, Xin Chen, Xiaotao Gu and Qi Tian*
 
 Resources including pseudocode, pre-trained models, and inference code are released.
 
 The slides used in a series of recent talks are attached here. [Baidu Netdisk](https://pan.baidu.com/s/14ZGywcr4XAK5dk75-8PUqA?pwd=9sco), extraction code: 9sco
+
+## News and Updates
+
+* [Jul 31 2023] We released the details of training the lite version of Pangu-Weather.
+* [Jul 17 2023] Pangu-Weather was online as part of ECMWF's operational suite! Everyone can see 10-day global weather forecasting **without running code**. ECMWF has made use of the models released at this repository! [Please search the ECMWF charts website with the query of PANGU.](https://charts.ecmwf.int/?query=pangu)
+* [Jul 05 2023] Pangu-Weather was published on Nature! We recommend the researchers to cite our Nature paper in the future.
+* [Jun 27 2023] Pangu-Weather was presented at [PASC 2023](https://pasc23.pasc-conference.org/program/schedule/).
+* [Jun 12 2023] Pangu-Weather was presented at [VALSE 2023](http://valser.org/2023/#/workshopde?id=15).
+* [May 27 2023] Pangu-Weather was presented at [the WMO EW4ALL conference](https://community.wmo.int/en/news/exploring-possibilities-artificial-intelligence-areas-water-weather-and-climate).
 
 ## Installation
 
@@ -94,6 +105,28 @@ Also, `inference_iterative.py` shows an example to generate per-6-hour forecast 
 
 Note that one needs to download about 60TB of ERA5 data and prepare for computational resource of 3000 GPU-days (in V100) to train each model.
 
+## Training a lite version
+
+Recently, we found that Pangu-Weather can be trained efficiently using only 1% of data and GPU computation. We call the version Pangu-Weather-lite. Note that the lite models cannot rival the full models, but the lite version offers opportunities for researchers with limited resource to explore the AI methods for weather forecasting.
+
+Here are the key implementation details.
+
+* Data. We reduced the training data into 11 years (2007-2017) and only used the 00UTC time point (the full version used all 24 time points throughout the day). Also, only 00UTC data is used in the testing phase. The total amount of downloaded data shall be less than 1TB.
+* Model. We adjusted the down-sampling rate in the first stage from 2x4x4 to 2x8x8.
+* Training epochs. One can remain using 100 epochs or reduce the number to 50 (half); note that the cosine annealing schedule is adjusted accordingly.
+* Model set. We only trained one model (lead time is 24 hours), which means that the lite version can only perform daily weather forecasting.
+
+Here are the results.
+
+| Method              | RMSE, Z500             | RMSE, T850           | RMSE, T2M            | RMSE, T850           | Years | Down-sampling | Epochs | GPU x days |
+| ------------------- | ---------------------- | -------------------- | -------------------- | -------------------- | ----- | ------------- | --     | ---------- |
+| Operational IFS     | 152.8 (3d), 333.7 (5d) | 1.37 (3d), 2.06 (5d) | 1.34 (3d), 1.75 (5d) | 1.94 (3d), 2.90 (5d) | --    | --            | --     | --         |
+| Pangu-Weather       | 134.5 (3d), 296.7 (5d) | 1.14 (3d), 1.79 (5d) | 1.05 (3d), 1.53 (5d) | 1.61 (3d), 2.53 (5d) | 39    | 2 x 4 x 4     | 100    | 192 x 16   |
+| Pangu-Weather-Lite1 | 163.1 (3d), 338.2 (5d) | 1.29 (3d), 1.96 (5d) | 1.16 (3d), 1.64 (5d) | 1.80 (3d), 2.74 (5d) | 11    | 2 x 8 x 8     | 100    | 8 x 6      |
+| Pangu-Weather-Lite2 | 177.9 (3d), 357.5 (5d) | 1.36 (3d), 2.05 (5d) | 1.24 (3d), 1.71 (5d) | 1.90 (3d), 2.84 (5d) | 11    | 2 x 8 x 8     | 50     | 8 x 3      |
+
+Please note that the lite version was only trained and tested in 00UTC data. This means that its performance on other time points is not guaranteed. Since whether variables are closely correlated to time-in-day, it is difficult to directly use the lite version for daily whether forecasting. Again, the lite version is to ease the researchers to explore the property of AI models.
+
 ## License
 
 Pangu-Weather is released by Huawei Cloud.
@@ -107,6 +140,21 @@ Also, please note that all models were trained using the ERA5 dataset provided b
 ## References
 
 If you use the resource in your research, please cite our paper:
+
+```
+@article{bi2023accurate,
+  title={Accurate medium-range global weather forecasting with 3D neural networks},
+  author={Bi, Kaifeng and Xie, Lingxi and Zhang, Hengheng and Chen, Xin and Gu, Xiaotao and Tian, Qi},
+  journal={Nature},
+  volume={619},
+  number={7970},
+  pages={533--538},
+  year={2023},
+  publisher={Nature Publishing Group}
+}
+```
+
+We also list the preprint version for your information.
 
 ```
 @article{bi2022pangu,
