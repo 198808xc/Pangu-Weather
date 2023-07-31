@@ -17,11 +17,13 @@ The slides used in a series of recent talks are attached here. [Baidu Netdisk](h
 ## News and Updates
 
 * [Jul 31 2023] We released the details of training the lite version of Pangu-Weather.
-* [Jul 17 2023] Pangu-Weather was online as part of ECMWF's operational suite! Everyone can see 10-day global weather forecasting **without running code**. ECMWF has made use of the models released at this repository! [Please search the ECMWF charts website with the query of PANGU.](https://charts.ecmwf.int/?query=pangu)
+* [Jul 19 2023] ECMWF released an official [technical report](https://arxiv.org/abs/2307.10128) for "the rise of data-driven weather forecasting". Pangu-Weather was mentioned and tested thoroughly in the paper. We thank ECMWF for testing our models in real-world scenarios.
+* [Jul 17 2023] Pangu-Weather was online as part of ECMWF's operational suite! Everyone can see 10-day global weather forecasting **without running code**. ECMWF has made use of the models released at this repository! [Please search the ECMWF charts website with the query of "PANGU".](https://charts.ecmwf.int/?query=pangu)
 * [Jul 05 2023] Pangu-Weather was published on [Nature](https://www.nature.com/articles/s41586-023-06185-3). It was made **Open Access**! We recommend the researchers to cite our Nature paper in the future.
 * [Jun 27 2023] Pangu-Weather was presented at [PASC 2023](https://pasc23.pasc-conference.org/program/schedule/).
 * [Jun 12 2023] Pangu-Weather was presented at [VALSE 2023](http://valser.org/2023/#/workshopde?id=15).
 * [May 27 2023] Pangu-Weather was presented at [the WMO Early Warning for All (EW4ALL) conference](https://community.wmo.int/en/news/exploring-possibilities-artificial-intelligence-areas-water-weather-and-climate).
+* [May 12 2023] ECMWF released a [repository](https://github.com/ecmwf-lab/ai-models-panguweather), offering a toolkit for running Pangu-Weather. We thank ECMWF for the efforts in easing everyone to test Pangu-Weather.
 * [May 09 2023] Pangu-Weather was accepted by Nature!
 
 ## Installation
