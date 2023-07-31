@@ -8,7 +8,9 @@ This is the official repository for the Pangu-Weather papers.
 
 *by Kaifeng Bi, Lingxi Xie, Hengheng Zhang, Xin Chen, Xiaotao Gu and Qi Tian*
 
-Resources including pseudocode, pre-trained models, and inference code are released.
+**Note: the arXiv version offers more technical details, and the Nature paper contains some new figures.**
+
+Resources including pseudocode, pre-trained models, and inference code are released here.
 
 The slides used in a series of recent talks are attached here. [Baidu Netdisk](https://pan.baidu.com/s/14ZGywcr4XAK5dk75-8PUqA?pwd=9sco), extraction code: 9sco
 
@@ -16,10 +18,11 @@ The slides used in a series of recent talks are attached here. [Baidu Netdisk](h
 
 * [Jul 31 2023] We released the details of training the lite version of Pangu-Weather.
 * [Jul 17 2023] Pangu-Weather was online as part of ECMWF's operational suite! Everyone can see 10-day global weather forecasting **without running code**. ECMWF has made use of the models released at this repository! [Please search the ECMWF charts website with the query of PANGU.](https://charts.ecmwf.int/?query=pangu)
-* [Jul 05 2023] Pangu-Weather was published on Nature! We recommend the researchers to cite our Nature paper in the future.
+* [Jul 05 2023] Pangu-Weather was published on [Nature](https://www.nature.com/articles/s41586-023-06185-3). It was made **Open Access**! We recommend the researchers to cite our Nature paper in the future.
 * [Jun 27 2023] Pangu-Weather was presented at [PASC 2023](https://pasc23.pasc-conference.org/program/schedule/).
 * [Jun 12 2023] Pangu-Weather was presented at [VALSE 2023](http://valser.org/2023/#/workshopde?id=15).
-* [May 27 2023] Pangu-Weather was presented at [the WMO EW4ALL conference](https://community.wmo.int/en/news/exploring-possibilities-artificial-intelligence-areas-water-weather-and-climate).
+* [May 27 2023] Pangu-Weather was presented at [the WMO Early Warning for All (EW4ALL) conference](https://community.wmo.int/en/news/exploring-possibilities-artificial-intelligence-areas-water-weather-and-climate).
+* [May 09 2023] Pangu-Weather was accepted by Nature!
 
 ## Installation
 
@@ -118,20 +121,22 @@ Here are the key implementation details.
 
 Here are the results.
 
-| Method              | RMSE, Z500             | RMSE, T850           | RMSE, T2M            | RMSE, T850           | Years | Down-sampling | Epochs | GPU x days |
+| Method              | RMSE, Z500             | RMSE, T850           | RMSE, T2M            | RMSE, U10            | Years | Down-sampling | Epochs | GPU x days |
 | ------------------- | ---------------------- | -------------------- | -------------------- | -------------------- | ----- | ------------- | --     | ---------- |
 | Operational IFS     | 152.8 (3d), 333.7 (5d) | 1.37 (3d), 2.06 (5d) | 1.34 (3d), 1.75 (5d) | 1.94 (3d), 2.90 (5d) | --    | --            | --     | --         |
 | Pangu-Weather       | 134.5 (3d), 296.7 (5d) | 1.14 (3d), 1.79 (5d) | 1.05 (3d), 1.53 (5d) | 1.61 (3d), 2.53 (5d) | 39    | 2 x 4 x 4     | 100    | 192 x 16   |
 | Pangu-Weather-Lite1 | 163.1 (3d), 338.2 (5d) | 1.29 (3d), 1.96 (5d) | 1.16 (3d), 1.64 (5d) | 1.80 (3d), 2.74 (5d) | 11    | 2 x 8 x 8     | 100    | 8 x 6      |
 | Pangu-Weather-Lite2 | 177.9 (3d), 357.5 (5d) | 1.36 (3d), 2.05 (5d) | 1.24 (3d), 1.71 (5d) | 1.90 (3d), 2.84 (5d) | 11    | 2 x 8 x 8     | 50     | 8 x 3      |
 
+One can observe that the lite version can surpass operational IFS (*when tested only at 00UTC time points*) in T850 (850hPa temperature), T2M (2m temperature) and U10 (u-component of 10m wind speed), while requiring less than 1% of computational costs compared to the full version.
+
 Please note that the lite version was only trained and tested in 00UTC data. This means that its performance on other time points is not guaranteed. Since whether variables are closely correlated to time-in-day, it is difficult to directly use the lite version for daily whether forecasting. Again, the lite version is to ease the researchers to explore the property of AI models.
 
 ## License
 
-Pangu-Weather is released by Huawei Cloud.
+Pangu-Weather was released by Huawei Cloud.
 
-The trained parameters of Pangu-Weather are made available under the terms of the BY-NC-SA 4.0 license. You can find details [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+The trained parameters of Pangu-Weather were made available under the terms of the BY-NC-SA 4.0 license. You can find details [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 **The commercial use of these models is forbidden.**
 
@@ -154,7 +159,7 @@ If you use the resource in your research, please cite our paper:
 }
 ```
 
-We also list the preprint version for your information.
+We also offer the bibliography of the arXiv preprint version for your information.
 
 ```
 @article{bi2022pangu,
