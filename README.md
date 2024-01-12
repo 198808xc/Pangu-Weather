@@ -12,9 +12,9 @@ This is the official repository for the Pangu-Weather papers.
 
 Resources including pseudocode, pre-trained models, and inference code are released here.
 
-The slides used in a series of recent talks are attached here. [Baidu Netdisk](https://pan.baidu.com/s/1o6dEJDz4dChwqO28m_nB0Q?pwd=rv0u), extraction code: rv0u
+The slides used in a series of recent talks are attached here. [Baidu Netdisk](https://pan.baidu.com/s/1eYkmf0QehEYdR1dk12idNA?pwd=zjj4), extraction code: zjj4
 
-中文版PPT请参见链接: [百度网盘](https://pan.baidu.com/s/1NxlN4UerlOr9u9vsRGrydQ?pwd=i36c), 提取码: i36c
+中文版PPT请参见链接: [百度网盘](https://pan.baidu.com/s/1oINuxuBstFEbfcouX6qHMw?pwd=7nzb), 提取码: 7nzb
 
 ## News and Updates
 
